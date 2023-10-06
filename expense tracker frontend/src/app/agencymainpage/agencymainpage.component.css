@@ -1,0 +1,75 @@
+
+.sub-container{
+    margin-top: 20vh;
+    height: 80vh;
+    width: 100vw;
+}
+
+button{
+    background-color: rgb(67, 230, 61);
+}
+
+h3{
+    color: red;
+}
+
+h4{
+    color: rgb(0, 68, 255);
+}
+.container{
+    margin-left: 10%;
+    display: flex; 
+    align-items: center;
+    height: 500px;
+    width: 80%;
+}
+
+.information{
+    height: 50px;
+    width: 100%;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main{
+    height: 80%;
+    width: 100%;
+    /* border: 1px solid yellow; */
+    display:flex;
+    flex-direction: row;
+}
+
+.members{
+    height: 80%;
+}
+
+.addRecord{
+    width:65%;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.summary{
+    width:35%;
+    border: 1px solid;
+}
+
+th{
+  border: 1px solid;  
+  width: 80rem;
+  height: 25px;
+}
+
+td{
+    border-collapse: collapse;
+    border: 1px solid;
+    width: 80rem;
+    height: 25px;
+}
+

@@ -1,0 +1,30 @@
+<div class="container">
+  <div>
+    <div>
+    <h3>Add Agency</h3>
+    </div>
+    <div>
+        <!-- <form #agencyForm="ngForm" (ngSubmit)="onSubmit(agencyForm.value)"> -->
+        <form [formGroup]="addAgencyForm" (ngSubmit)="onSubmit()">
+
+          <label for="name">Name : </label>
+          <br>
+          <input type="text" name="name" placeholder="Agency Name" formControlName="name">
+          <br>
+          <div *ngIf=" name && name.invalid && name.touched">
+            <span>invalid name</span>
+          </div><br>
+          <label for="description">Description : </label>
+          <br>
+          <input type="text" name="description" placeholder="Agency description" formControlName="description">
+          <br>
+          <div *ngIf=" description && description.invalid && description.touched">
+            <span>invalid description</span>
+          </div>
+          <div><span>{{error}}</span></div>
+          <br>
+          <button type="submit" [disabled]="!addAgencyForm.valid"> Add Agency</button>
+        </form>
+    </div>
+  </div>
+</div>

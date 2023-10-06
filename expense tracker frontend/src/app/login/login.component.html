@@ -1,0 +1,26 @@
+<div class="container">
+  <div>
+    <div>
+        <h3>Agency page</h3>
+
+        <h4>Agencies</h4>
+      </div>
+        <div>
+          <!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)"> -->
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+              <mat-label>select Agency</mat-label>
+              <mat-select name="id" formControlName="id">
+                <mat-option *ngFor="let user of users" [value]="user.id">
+                  {{user.agencyName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button type="submit" [disabled]="!loginForm.valid">submit </button>
+          </form>
+        </div>
+        <div>
+        <button routerLink="addagency"> create agency</button>
+      </div>
+    </div>
+</div>

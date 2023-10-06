@@ -1,0 +1,52 @@
+
+
+<div class="container">
+    <div>
+        <div>
+            <h3>add member</h3>
+        </div>
+        <div>
+            <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
+                <label for="userName">User Name : </label>
+                <br>
+                <input class="userName" type="text" name="userName" placeholder="User Name" formControlName="userName">
+                <br>
+                <div *ngIf=" userName && userName.invalid && userName.touched">
+                    <span>invalid userName</span>
+                </div>
+                  <br>
+                  <label for="password">Password</label>
+                  <br>
+                  <input class="password" type="text" name="password" placeholder="password" formControlName="password">
+                  <br>
+                  <div *ngIf=" password && password.invalid && password.touched">
+                      <span>invalid password</span>
+                    </div>
+                    <br>
+                    <mat-radio-group aria-label="Select an option" name = "role" formControlName="role">
+                        <mat-radio-button value="ROLE_ADMIN">Admin</mat-radio-button>
+                        <mat-radio-button value="ROLE_USER">User</mat-radio-button>
+                      </mat-radio-group>
+                      <br>
+                <label for="address">Address</label>
+                <br>
+                <input class="address" type="text" name="address" placeholder="address" formControlName="address">
+                <br>
+                <div *ngIf=" address && address.invalid && address.touched">
+                    <span>invalid address</span>
+                  </div>
+                <br>
+                <label for="age">Age : </label>
+                <br>
+                <input class="age" type="number" name="age" placeholder="age" formControlName="age" >
+                <br>
+                <div><span>{{error}}</span></div>
+                <div *ngIf=" age && age.invalid && age.touched">
+                    <span>invalid age</span>
+                  </div>
+                <br>
+                <button type="submit" [disabled]="!addMemberForm.valid"> add member</button>
+            </form>
+        </div>
+    </div>
+</div>

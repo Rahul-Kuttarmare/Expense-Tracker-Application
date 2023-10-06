@@ -1,0 +1,55 @@
+
+<div class="container">
+  <div>
+  <div>
+    <h3>add Records</h3>
+    <div>
+      <div>
+        <form [formGroup]="addRecordForm" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <mat-label>select Member</mat-label>
+            <mat-select ngModel name="memberId" formControlName="memberId">
+              <mat-option *ngFor="let user of data" [value]="user.id">
+                {{user.userName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <div *ngIf=" memberId && memberId.invalid && memberId.touched">
+            <span>invalid memberId</span>
+          </div>
+          <br>
+          <label for="description"> description : </label>
+          <br>
+          <input ngModel type="text" name="description" placeholder="description" formControlName="description">
+          <br>
+          <div *ngIf=" description && description.invalid && description.touched">
+            <span>invalid description type</span>
+          </div><br>
+          <label for="transactionType">transactionType :</label>
+          <mat-radio-group aria-label="Select an option" name="transactionType" formControlName="transactionType">
+            <mat-radio-button value="credit">Debit</mat-radio-button>
+            <mat-radio-button value="deposit">Credit</mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <label for="amount">Amount : </label>
+          <br>
+          <input ngModel type="number" name="amount" placeholder="amount" formControlName="amount">
+          <br>
+          <div>
+            <span>{{error}}</span>
+          </div>
+          <div *ngIf="amount && amount && amount.invalid && amount.touched">
+            <span >invalid amount</span>
+          </div>
+          <br>
+          <button type="submit" [disabled]="!addRecordForm.valid">submit </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button routerLink="../addmember">add member</button>
+  </div>
+</div>
+</div>

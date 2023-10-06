@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 95vh;
+}
+
+.sub-container{
+    border: 1px solid black;
+    padding: 20px;
+}
+
+h4{
+    color: red;
+}
+
+button{
+    background-color: rgb(67, 230, 61);
+}
+
+span{
+    color: red;
+}

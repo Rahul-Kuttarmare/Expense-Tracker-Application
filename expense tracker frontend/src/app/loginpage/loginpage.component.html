@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="sub-container">
+    <div><h4>Login page</h4></div>
+      <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
+        <mat-radio-group aria-label="Select an option" name = "role" formControlName="role">
+          <mat-radio-button value="ROLE_ADMIN">Admin</mat-radio-button>
+          <mat-radio-button value="ROLE_USER">User</mat-radio-button>
+        </mat-radio-group>
+        <br>
+          <label for="userName">User Name : </label>
+          <br>
+          <input class="userName" type="text" name="userName" placeholder="userName" formControlName="userName">
+          <br>
+          <div *ngIf=" userName && userName.invalid && userName.touched">
+              <span>invalid userName</span>
+          </div>
+            <br>
+          <label for="password">password</label>
+          <br>
+          <input class="password" type="text" name="password" placeholder="password" formControlName="password">
+          <br>
+          <div *ngIf=" password && password.invalid && password.touched">
+              <span>invalid password</span>
+            </div>
+          <br>
+          <div *ngIf="error !== ''"><span>{{error}}</span></div>
+          <button type="submit" [disabled]="!addMemberForm.valid"> Login</button>
+      </form>
+      <button routerLink="../adduser"> add user</button>
+  </div>
+</div>
